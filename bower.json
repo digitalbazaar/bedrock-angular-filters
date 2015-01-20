@@ -1,0 +1,7 @@
+{
+  "name": "bedrock-angular-filters",
+  "main": "./app.js",
+  "ignore": [],
+  "dependencies": {
+  }
+}
