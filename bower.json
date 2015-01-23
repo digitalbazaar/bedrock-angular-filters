@@ -1,6 +1,7 @@
 {
   "name": "bedrock-angular-filters",
-  "main": "./app.js",
+  "main": "./filters.js",
+  "moduleType": ["amd"],
   "ignore": [],
   "dependencies": {
   }
