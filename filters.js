@@ -30,7 +30,7 @@ define([
 
 'use strict';
 
-var module = angular.module('app.filters', []);
+var module = angular.module('bedrock.filters', []);
 
 module.filter(ceil);
 module.filter(bytes);
