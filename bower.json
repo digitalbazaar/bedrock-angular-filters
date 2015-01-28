@@ -2,7 +2,10 @@
   "name": "bedrock-angular-filters",
   "main": "./filters.js",
   "moduleType": ["amd"],
-  "ignore": [],
+  "ignore": [
+    "bedrock",
+    "bedrock.json"
+  ],
   "dependencies": {
   }
 }
