@@ -32,6 +32,7 @@ function factory() {
     var number = Math.floor(Math.log(bytes) / Math.log(1024));
     var value = (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision);
 
+    // FIXME: >PiB values should be handled as PiB
     return (value.match(/\.0*$/) ?
       value.substr(0, value.indexOf('.')) : value) +  ' ' + units[number];
   };
