@@ -145,7 +145,7 @@ Options:
 Fill the beginning of a string with a character.
 
 ```html
-{{STRING | ellipsis[:LENGTH][:CH]}}
+{{STRING | prefill[:LENGTH][:CH]}}
 ```
 
 Options:
