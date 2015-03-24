@@ -2,10 +2,29 @@
 
 A [bedrock][] [bower][] module that implements various [AngularJS][] filters.
 
-## Installation
+## Quick Examples
+
+```html
+<!-- show a readable byte count -->
+<div>Download size: {{downloadSize | bytes}}</div>
+
+<!-- mask a credit card number -->
+<div>Card number: {{cardNumber | mask}}</div>
+```
+
+## Setup
 
 ```
-bower install bedrock-angular-filters --save
+bower install bedrock-angular-filters
+```
+
+Installation of the module followed by a restart of your [bedrock][] server
+is sufficient to make the module and filters available to your application.
+
+To manually add **bedrock-angular-filters** as a dependency:
+
+```js
+angular.module('myapp', ['bedrock.filters']);
 ```
 
 ## Filters
