@@ -79,8 +79,8 @@ Options:
   less than 3.
 
 ```
-{{'abcdefg' | ellipsis:6}} => 'abc...'
 {{'abcdefg' | ellipsis:10}} => 'abcdefg'
+{{'abcdefg' | ellipsis:6}} => 'abc...'
 {{'abcdefg' | ellipsis:1}} => '...'
 ```
 
