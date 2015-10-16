@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+- isEmpty filter for arrays, objects, and strings.
+
 ## [1.0.0] - 2015-04-08
 
 ## [0.1.1] - 2015-02-16

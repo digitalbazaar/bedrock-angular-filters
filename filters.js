@@ -13,6 +13,7 @@ define([
   './embedded-string-filter',
   './encodeuricomponent-filter',
   './floor-filter',
+  './isempty-filter',
   './mask-filter',
   './now-filter',
   './prefill-filter'
@@ -24,6 +25,7 @@ define([
   embeddedString,
   encodeURIComponent_,
   floor,
+  isEmpty,
   mask,
   now,
   prefill) {
@@ -38,6 +40,7 @@ module.filter(ellipsis);
 module.filter(embeddedString);
 module.filter(encodeURIComponent_);
 module.filter(floor);
+module.filter(isEmpty);
 module.filter(mask);
 module.filter(now);
 module.filter(prefill);
