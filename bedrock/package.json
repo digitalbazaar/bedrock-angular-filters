@@ -1,0 +1,27 @@
+{
+  "name": "bedrock-angular-filters-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node test.js test --framework protractor --protractor-suite bedrock-angular-filters",
+    "postinstall": "bower install",
+    "postupdate": "bower update",
+    "bower-install": "bower install",
+    "bower-update": "bower update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-angular-filters"
+  },
+  "dependencies": {
+    "bedrock": "^1.0.0",
+    "bedrock-protractor": "^2.1.1",
+    "bedrock-views": "^1.0.0",
+    "bower": "^1.5.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "directories": {},
+  "main": "test.js"
+}
