@@ -1,28 +1,17 @@
 var bedrock = GLOBAL.bedrock;
 
-describe('ellipsis', function() {
-  beforeEach(function() {
-    bedrock.waitForAngular();
-  });
+bedrock.testInBrowser('ellipsis', function($injector) {
+  var ellipsisFilter = $injector.get('ellipsisFilter');
 
   it('should not replace text with ...', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('ellipsisFilter');
-      return filter('abcdefg', 10);
-    })).to.eventually.equal('abcdefg');
+    ellipsisFilter('abcdefg', 10).should.equal('abcdefg');
   });
 
   it('should replace text with ...', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('ellipsisFilter');
-      return filter('abcdefg', 6);
-    })).to.eventually.equal('abc...');
+    ellipsisFilter('abcdefg', 6).should.equal('abc...');
   });
 
   it('should show only ...', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('ellipsisFilter');
-      return filter('abcdefg', 1);
-    })).to.eventually.equal('...');
+    ellipsisFilter('abcdefg', 1).should.equal('...');
   });
 });

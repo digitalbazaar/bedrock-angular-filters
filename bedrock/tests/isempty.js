@@ -1,44 +1,32 @@
+/* jshint -W030 */
+
 var bedrock = GLOBAL.bedrock;
 
-describe('isEmpty', function() {
-  beforeEach(function() {
-    bedrock.waitForAngular();
-  });
+bedrock.testInBrowser('isEmpty', function($injector) {
+  var isEmptyFilter = $injector.get('isEmptyFilter');
 
   it('should check empty array...', function() {
-    expect(bedrock.run(function($injector) {
-      return $injector.get('isEmptyFilter')([]);
-    })).to.eventually.be.true;
+    isEmptyFilter([]).should.be.true;
   });
 
   it('should check non empty array...', function() {
-    expect(bedrock.run(function($injector) {
-      return $injector.get('isEmptyFilter')([0]);
-    })).to.eventually.be.false;
+    isEmptyFilter([0]).should.be.false;
   });
 
   it('should check empty object...', function() {
-    expect(bedrock.run(function($injector) {
-      return $injector.get('isEmptyFilter')({});
-    })).to.eventually.be.true;
+    isEmptyFilter({}).should.be.true;
   });
 
   it('should check non empty object...', function() {
-    expect(bedrock.run(function($injector) {
-      return $injector.get('isEmptyFilter')({key: 'value'});
-    })).to.eventually.be.false;
+    isEmptyFilter({key: 'value'}).should.be.false;
   });
 
   it('should check empty string...', function() {
-    expect(bedrock.run(function($injector) {
-      return $injector.get('isEmptyFilter')('');
-    })).to.eventually.be.true;
+    isEmptyFilter('').should.be.true;
   });
 
   it('should check non empty string...', function() {
-    expect(bedrock.run(function($injector) {
-      return $injector.get('isEmptyFilter')('0');
-    })).to.eventually.be.false;
+    isEmptyFilter('0').should.be.false;
   });
 
   /* FIXME
