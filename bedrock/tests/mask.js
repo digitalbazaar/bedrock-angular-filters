@@ -1,28 +1,17 @@
 var bedrock = GLOBAL.bedrock;
 
-describe('mask', function() {
-  beforeEach(function() {
-    bedrock.waitForAngular();
-  });
+bedrock.testInBrowser('mask', function($injector) {
+  var maskFilter = $injector.get('maskFilter');
 
   it('should convert 12345 to *2345', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('maskFilter');
-      return filter('12345');
-    })).to.eventually.equal('*2345');
+    maskFilter('12345').should.equal('*2345');
   });
 
   it('should convert 12345 to 2345', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('maskFilter');
-      return filter('12345', 4);
-    })).to.eventually.equal('2345');
+    maskFilter('12345', 4).should.equal('2345');
   });
 
   it('should convert 12345 to ****2345', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('maskFilter');
-      return filter('12345', 8);
-    })).to.eventually.equal('****2345');
+    maskFilter('12345', 8).should.equal('****2345');
   });
 });

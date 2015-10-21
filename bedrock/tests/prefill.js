@@ -1,28 +1,17 @@
 var bedrock = GLOBAL.bedrock;
 
-describe('prefill', function() {
-  beforeEach(function() {
-    bedrock.waitForAngular();
-  });
+bedrock.testInBrowser('prefill', function($injector) {
+  var prefillFilter = $injector.get('prefillFilter');
 
   it('should convert 1 to 01', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('prefillFilter');
-      return filter('1');
-    })).to.eventually.equal('01');
+    prefillFilter('1').should.equal('01');
   });
 
   it('should convert 1 to a1', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('prefillFilter');
-      return filter('1', 2, 'a');
-    })).to.eventually.equal('a1');
+    prefillFilter('1', 2, 'a').should.equal('a1');
   });
 
   it('should convert 1 to 001', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('prefillFilter');
-      return filter('1', 3);
-    })).to.eventually.equal('001');
+    prefillFilter('1', 3).should.equal('001');
   });
 });

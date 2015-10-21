@@ -1,71 +1,42 @@
 var bedrock = GLOBAL.bedrock;
 
-describe('bytes', function() {
-  beforeEach(function() {
-    bedrock.waitForAngular();
-  });
+bedrock.testInBrowser('bytes', function($injector) {
+  var bytesFilter = $injector.get('bytesFilter');
 
   it('should return "-" for NaN', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter('text');
-    })).to.eventually.equal('-');
+    bytesFilter('text').should.equal('-');
   });
 
   it('should round to two digits of precision', function() {
-    expect(bedrock.run(function($injector) {
-      var size = 1024 + 512;
-      var filter = $injector.get('bytesFilter');
-      return filter(size, 2);
-    })).to.eventually.equal('1.50 KiB');
+    var size = 1024 + 512;
+    bytesFilter(size, 2).should.equal('1.50 KiB');
   });
 
   it('should output 1 byte', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter(1, 0);
-    })).to.eventually.equal('1 byte');
+    bytesFilter(1, 0).should.equal('1 byte');
   });
 
   it('should output bytes', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter(2, 0);
-    })).to.eventually.equal('2 bytes');
+    bytesFilter(2, 0).should.equal('2 bytes');
   });
 
   it('should output KibiBytes', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter(Math.pow(1024, 1), 0);
-    })).to.eventually.equal('1 KiB');
+    bytesFilter(Math.pow(1024, 1), 2).should.equal('1 KiB');
   });
 
   it('should output MebiBytes', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter(Math.pow(1024, 2), 0);
-    })).to.eventually.equal('1 MiB');
+    bytesFilter(Math.pow(1024, 2), 0).should.equal('1 MiB');
   });
 
   it('should output GibiBytes', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter(Math.pow(1024, 3), 0);
-    })).to.eventually.equal('1 GiB');
+    bytesFilter(Math.pow(1024, 3), 0).should.equal('1 GiB');
   });
 
   it('should output TebiBytes', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter(Math.pow(1024, 4), 0);
-    })).to.eventually.equal('1 TiB');
+    bytesFilter(Math.pow(1024, 4), 0).should.equal('1 TiB');
   });
 
   it('should output PebiBytes', function() {
-    expect(bedrock.run(function($injector) {
-      var filter = $injector.get('bytesFilter');
-      return filter(Math.pow(1024, 5), 0);
-    })).to.eventually.equal('1 PiB');
+    bytesFilter(Math.pow(1024, 5), 0).should.equal('1 PiB');
   });
 });
