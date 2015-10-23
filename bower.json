@@ -4,7 +4,13 @@
   "main": "./filters.js",
   "moduleType": ["amd"],
   "ignore": [
-    "bedrock",
+    "bedrock/bower.json",
+    "bedrock/bower_components",
+    "bedrock/config.js",
+    "bedrock/node_modules",
+    "bedrock/package.json",
+    "bedrock/tests",
+    "bedrock/test.js",
     "bedrock.json"
   ],
   "dependencies": {
