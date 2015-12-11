@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.0.1] - 2015-12-11
+
 ### Added
 - isEmpty filter for arrays, objects, and strings.
 
@@ -13,6 +15,7 @@
 
 - See git history for changes.
 
-[Unreleased]: https://github.com/digitalbazaar/bedrock-angular-filters/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/digitalbazaar/bedrock-angular-filters/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/digitalbazaar/bedrock-angular-filters/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/digitalbazaar/bedrock-angular-filters/compare/0.1.1...1.0.0
 [0.1.1]: https://github.com/digitalbazaar/bedrock-angular-filters/compare/0.1.0...0.1.1
