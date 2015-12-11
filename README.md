@@ -126,6 +126,23 @@ Options:
 {{'0.991' | floor:4}} => '0.9910'
 ```
 
+### isEmpty
+
+Check if a string, array, or object is empty.
+
+```html
+{{VALUE | isEmpty}}
+```
+
+```
+{{'' | isEmpty}} => true
+{{'1234' | isEmpty}} => false
+{{[] | isEmpty}} => true
+{{[1234] | isEmpty}} => false
+{{{} | isEmpty}} => true
+{{{'value': 1234} | isEmpty}} => false
+```
+
 ### mask
 
 Show only the 4 final characters of a string and mask the rest.
