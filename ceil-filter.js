@@ -1,16 +1,12 @@
 /*!
  * Math ceil filter.
  *
- * Copyright (c) 2012-2014 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2012-2017 Digital Bazaar, Inc. All rights reserved.
  *
  * @author Dave Longley
  */
-define([], function() {
-
-'use strict';
-
 /* @ngInject */
-function factory() {
+export default function factory() {
   // Note: does not deal w/values w/leading zeros
   return function(value, digits) {
     value = (!value) ? '0' : value.toString();
@@ -35,7 +31,3 @@ function factory() {
     return value + new Array(length - value.length + 1).join('0');
   };
 }
-
-return {ceil: factory};
-
-});

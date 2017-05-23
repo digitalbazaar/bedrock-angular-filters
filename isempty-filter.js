@@ -1,16 +1,14 @@
 /*!
  * isEmpty filter.
  *
- * Copyright (c) 2012-2014 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2012-2017 Digital Bazaar, Inc. All rights reserved.
  *
  * @author Dave Longley
  */
-define(['angular'], function(angular) {
-
-'use strict';
+import angular from 'angular';
 
 /* @ngInject */
-function factory() {
+export default function factory() {
   return function(value) {
     if(angular.isArray(value) || angular.isString(value)) {
       return value.length === 0;
@@ -21,7 +19,3 @@ function factory() {
     throw new Error('Unknown value for isEmpty filter.');
   };
 }
-
-return {isEmpty: factory};
-
-});

@@ -1,16 +1,12 @@
 /*!
  * Bytes filter.
  *
- * Copyright (c) 2012-2015 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2012-2017 Digital Bazaar, Inc. All rights reserved.
  *
  * @author Dave Longley
  */
-define([], function() {
-
-'use strict';
-
 /* @ngInject */
-function factory() {
+export default function factory() {
   // cribbed from: https://gist.github.com/thomseddon/3511330
   return function(bytes, precision) {
     bytes = parseFloat(bytes);
@@ -34,10 +30,6 @@ function factory() {
 
     // FIXME: >PiB values should be handled as PiB
     return (value.match(/\.0*$/) ?
-      value.substr(0, value.indexOf('.')) : value) +  ' ' + units[number];
+      value.substr(0, value.indexOf('.')) : value) + ' ' + units[number];
   };
 }
-
-return {bytes: factory};
-
-});

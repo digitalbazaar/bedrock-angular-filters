@@ -1,7 +1,7 @@
 /*
  * Bedrock Configuration.
  *
- * Copyright (c) 2012-2015 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2012-2017 Digital Bazaar, Inc. All rights reserved.
  */
 var path = require('path');
 
@@ -11,6 +11,6 @@ module.exports = function(bedrock) {
     // add protractor tests
     config.suites['bedrock-angular-filters'] =
       path.join(__dirname, './tests/**/*.js');
-    //config.params.config.onPrepare.push();
+    // config.params.config.onPrepare.push();
   }
 };
