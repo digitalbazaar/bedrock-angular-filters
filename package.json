@@ -1,6 +1,6 @@
 {
   "name": "bedrock-angular-filters",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A bedrock module that implements various AngularJS filters.",
   "main": "index.js",
   "dependencies": {
